@@ -14,8 +14,7 @@ public class Estacionamento
 
     public void AdicionarVeiculo()
     {
-        // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos"
-        // *IMPLEMENTE AQUI*
+
         string? resultado;
         do
         {
@@ -90,17 +89,12 @@ public class Estacionamento
             return "A placa não pode ser nula ou vazia.";
         if (placa.Length != 7)
             return "A placa deve conter exatamente 7 caracteres.";
-        int[] letras = [0, 1, 2, 4];
-        int[] digitos = [3, 5, 6];
-        if (!letras.All(i => char.IsLetter(placa[i])) ||
-        !digitos.All(i => char.IsDigit(placa[i]))
-        )
-            return "Formato inválido. Confira o formato da placa: ABC1D23";
+
         return "Placa válida";
     }
     public string PedirPlaca()
     {
-        Console.WriteLine("Digite a placa do veículo (formato ABC1D23):");
+        Console.WriteLine("Digite a placa do veículo:");
         return (Console.ReadLine() ?? "").ToUpper().Replace("-", "").Trim();
     }
 
